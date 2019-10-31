@@ -19,7 +19,7 @@ arch:
 - ppc64le
 - amd64
 
-language: minimal
+language: php
 # python:
 #   - "3.8"
 #   - "3.7"
@@ -30,6 +30,7 @@ language: minimal
 # install: skip
 script:
 - env
+- php -v
 # - python -V
 # #- python ./src/hello.py
 # matrix:
