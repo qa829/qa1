@@ -20,6 +20,8 @@ arch:
 - amd64
 
 language: php
+php:
+- 7.3
 # python:
 #   - "3.8"
 #   - "3.7"
