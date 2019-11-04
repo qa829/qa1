@@ -1,43 +1,23 @@
-# dist: bionic # Ubuntu 18.04
+language: ruby
+arch: 
+  - arm64
+  #- amd64
+os: linux
+dist: xenial
 
-# language: julia
-# julia:
-#   - 1.1
-#   - 1.2
-#   - 1.3
-#   - nightly
+env:
+  global:
+  - VERSION=5.6.40 ALIAS=$VERSION
+  - ICU_INSTALL_DIR=$HOME/.phpenv/versions/$VERSION
+  - RELEASE=xenial
 
-# cache: ccache
+before_install:
 
-# script:
-# - ls
-# - pwd
+install:
 
-arch:
-- arm64
-# - s390x
-# - ppc64le
-# - amd64
+before_script:
 
-language: slim
-# php:
-# - 7.3
-# # python:
-#   - "3.8"
-#   - "3.7"
-#   - "3.6"
-#   - "3.5"
-#   - "2.7"
-
-# install: skip
 script:
-- ruby -v
-# - env
-# - php -v
-# - python -V
-# #- python ./src/hello.py
-# matrix:
-#   include:
-#     - name: xenial
-#     - dist: bionic
-#       name: bionic
+  - echo "Building php"
+  - __dots() { while true ; do echo -en . ; sleep 30 ; done } ; __dots &
+  - sleep 2h
