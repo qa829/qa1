@@ -2,6 +2,10 @@
 #dist: trusty
 arch: s390x
 
+addons:
+  apt:
+  - dnsutils
+
 # jdk:
 #   - oraclejdk8
 #   - oraclejdk9
