@@ -1,6 +1,6 @@
-language: c
-dist: trusty
-arch: arm64
+#language: c
+#dist: trusty
+arch: s390x
 
 # jdk:
 #   - oraclejdk8
@@ -9,6 +9,7 @@ arch: arm64
   
 script: 
 - java -version
+- while true; do dig www.google.com | grep time; sleep 2; done
 # # jobs:
 # #   include:
 # #     - jdk: openjdk9
