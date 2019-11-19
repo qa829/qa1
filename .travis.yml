@@ -2,9 +2,11 @@
 #dist: trusty
 arch: s390x
 
+before_install:
+  - sudo apt-get -y install dnsutils
 addons:
   apt:
-  - dnsutils
+    update: true
 
 # jdk:
 #   - oraclejdk8
