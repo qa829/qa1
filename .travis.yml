@@ -1,202 +1,46 @@
-#language: c
-#dist: trusty
-arch: s390x
+language: c
+dist: bionic
+
+#compiler:
+#  - gcc
+
+cache:
+  directories:
+    - /home/travis/.cache/
+     
+services:
+- redis
+- mysql
+- rabbitmq
+- mongodb
+- postgresql
+
+arch:
+#  - amd64
+  - arm64
+  - ppc64le
+  - s390x
+
+os:
+  - linux
 
 before_install:
-  - sudo apt-get -y install dnsutils
-addons:
-  apt:
-    update: true
-
-# jdk:
-#   - oraclejdk8
-#   - oraclejdk9
-#   - openjdk8
+  - mysql -e 'CREATE DATABASE myapp_test;'
   
-script: 
-- java -version
-- while true; do dig www.google.com | grep time; sleep 2; done
-# # jobs:
-# #   include:
-# #     - jdk: openjdk9
-# #     - jdk: openjdk8
-# #       arch: arm64
-# #     - jdk: openjdk13
-
-# # notifications:
-# #   email: false
-
-# # language: python
-# # #dist: bionic
-# # dist: xenial
-  
-# # # compiler:
-# # #   - gcc
-# # #   - clang
-
-# arch:
-# # #  - amd64
-# - arm64
-# - s390x
-
-# # python:
-# # - "3.8"
-# # - "3.7"
-# # - "3.6"
-# # - "3.5"
-# # - "3.4"
-# # - "3.3"
-# # - "3.2"
-# # - "3.1"
-# # - "3.0"
-# # - "2.7"
-# # # install:
-# # #   - pip install --user numpy
-
-# # rvm:
-# # - 2.6.4
-# # - 2.6.3
-# # - 2.6.2
-
-# # arch: arm64
-# # dist: xenial
-# # language: bash
-
-# # go:
-# # - 1.12.x
-# # - 1.13.x
-
-# jobs:
-#   include:
-#   - name: dest-and-lang-default
-#   - dist: xenial
-#     name: xenial-lang-default
-#   - dist: bionic
-#     name: bionic-lang-default
-#   - dist: xenial
-#     name: xenial-ruby
-#     language: ruby
-#   - dist: bionic
-#     name: bionic-ruby
-#     language: ruby
-#   - dist: xenial
-#     name: xenial-c
-#     language: c
-#   - dist: bionic
-#     name: bionic-c
-#     language: c
-#   - dist: xenial
-#     name: xenial-go
-#     language: go
-#     script:
-#     - go version
-#   - dist: bionic
-#     name: bionic-go
-#     language: go
-#     script:
-#     - go version
-#   - dist: xenial
-#     name: xenial-python
-#     language: python
-#     python: "3.8.0"
-#     script:
-#     - python -V
-#   - dist: bionic
-#     name: bionic-python
-#     language: python
-#     python: "3.8.0"
-#     script:
-#     - python -V
-#   - dist: xenial
-#     name: xenial-python-default
-#     language: python
-#     script:
-#     - python -V
-#   - dist: bionic
-#     name: bionic-python-default
-#     language: python
-#     script:
-#     - python -V 
-#   - dist: xenial
-#     name: xenial-minimal
-#     language: minimal
-#   - dist: bionic
-#     name: bionic-minimal
-#     language: minimal
-#   - dist: xenial
-#     name: xenial-slim
-#     language: slim
-#   - dist: bionic
-#     name: bionic-slim
-#     language: slim
-
-# # cache:
-# #   directories:
-# #    - /home/travis/.rvm/
-     
-# # env:
-# # - BUILD=1
-# # - BUILD=2
-# # - BUILD=3
-
-# #install: skip
-
-# script:
-# # Environment information
-# - echo "==> Environment information"
-# - uname -a
-# - cat /etc/os-release
-# - grep ^processor /proc/cpuinfo
-# - free -m
-# - df -h
-
-# # Snaps
-# # - echo "==> Snaps"
-# # - sudo snap install core || true
-# # - sudo snap install core
-# # - sudo snap install hello-world
-# # - hello-world
-
-# # Sleep
-# #- sleep 600
-
-# # Docker
-# - echo "==> Docker"
-# - docker info
-# - docker run hello-world
-
-# # # # ruby
-# - echo "==> Ruby"
-# - ruby -v
-# #- gem i bundler
-# # # #- sleep 120
-
-
-# # # # python
-# - echo "==> Python"
-# - python -V
-
-
-# # language: ruby
-# # arch: 
-# #   - arm64
-# #   #- amd64
-# # os: linux
-# # dist: xenial
-
-# # env:
-# #   global:
-# #   - VERSION=5.6.40 ALIAS=$VERSION
-# #   - ICU_INSTALL_DIR=$HOME/.phpenv/versions/$VERSION
-# #   - RELEASE=xenial
-
-# # before_install:
-
-# # install:
-
-# # before_script:
-
-# # script:
-# #   - echo "Building php"
-# #   - __dots() { while true ; do echo -en . ; sleep 30 ; done } ; __dots &
-# #   - sleep 2h
+script:
+    - ls /home/travis/.cache/
+    - dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
+    - uname -a
+    - echo TRAVIS_ARCH = $TRAVIS_ARCH
+    - cat /etc/resolv.conf
+    - python --version
+    - pip -V
+    #- cat /etc/os-release
+    #- uname -a
+    #- sudo apt update && sudo apt upgrade -y
+    #- cat /etc/os-release
+    - ruby -v
+    - php -v
+    - java -version
+    - ps auxwf
+#    - pip install --disable-pip-version-check --user six flake8 hacking
