@@ -20,6 +20,10 @@ arch:
   - arm64
   - ppc64le
   - s390x
+  
+php:
+- 7.4snapshot
+- nightly
 
 os:
   - linux
@@ -28,20 +32,21 @@ before_install:
   - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
-    - ls /home/travis/.cache/
-    #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
-    - travis_debug
-    - uname -a
-    - echo TRAVIS_ARCH = $TRAVIS_ARCH
-    - cat /etc/resolv.conf
-    - python --version
-    - pip -V
-    #- cat /etc/os-release
-    #- uname -a
-    #- sudo apt update && sudo apt upgrade -y
-    #- cat /etc/os-release
-    - ruby -v
-    - php -v
-    - java -version
-    - ps auxwf
-#    - pip install --disable-pip-version-check --user six flake8 hacking
+- php -v
+#     - ls /home/travis/.cache/
+#     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
+#     - travis_debug
+#     - uname -a
+#     - echo TRAVIS_ARCH = $TRAVIS_ARCH
+#     - cat /etc/resolv.conf
+#     - python --version
+#     - pip -V
+#     #- cat /etc/os-release
+#     #- uname -a
+#     #- sudo apt update && sudo apt upgrade -y
+#     #- cat /etc/os-release
+#     - ruby -v
+#     - php -v
+#     - java -version
+#     - ps auxwf
+# #    - pip install --disable-pip-version-check --user six flake8 hacking
