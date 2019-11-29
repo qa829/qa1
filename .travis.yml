@@ -29,7 +29,7 @@ before_install:
   
 script:
     - ls /home/travis/.cache/
-    - dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
+    #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
     - uname -a
     - echo TRAVIS_ARCH = $TRAVIS_ARCH
     - cat /etc/resolv.conf
