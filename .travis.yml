@@ -1,4 +1,4 @@
-language: php
+language: ruby
 dist: xenial
 
 #compiler:
@@ -17,13 +17,13 @@ services:
 
 arch:
   - amd64
-  - arm64
-  - ppc64le
-  - s390x
+#   - arm64
+#   - ppc64le
+#   - s390x
   
-php:
-- 7.4snapshot
-- nightly
+# php:
+# - 7.4snapshot
+# - nightly
 
 os:
   - linux
@@ -32,7 +32,7 @@ before_install:
   - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
-- php -v
+- ruby -v
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
