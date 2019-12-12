@@ -29,8 +29,9 @@ os:
   - linux
 
 before_install:
-  - systemctl start postgresql@10.10-main
-  - mysql -e 'CREATE DATABASE myapp_test;'
+  - sudo systemctl start postgresql@10.10-main
+  - psql -c 'create database travis_ci_test;' -U postgres
+#  - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
 - ruby -v
