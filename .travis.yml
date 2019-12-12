@@ -29,12 +29,14 @@ os:
   - linux
 
 before_install:
+  - systemctl start postgresql@10.10-main
   - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
 - ruby -v
 - psql -V
 - dpkg -l | grep postgre
+- ps auxfww
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
