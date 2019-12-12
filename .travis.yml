@@ -1,6 +1,13 @@
 language: ruby
-dist: bionic
+dist: xenial
 
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+    
 #compiler:
 #  - gcc
 
@@ -8,12 +15,12 @@ cache:
   directories:
     - /home/travis/.cache/
      
-services:
-- redis
-- mysql
-- rabbitmq
-- mongodb
-- postgresql
+# services:
+# - redis
+# - mysql
+# - rabbitmq
+# - mongodb
+# - postgresql
 
 arch:
   - amd64
@@ -29,7 +36,7 @@ os:
   - linux
 
 before_install:
-  - sudo systemctl start postgresql@10.10-main
+#  - sudo systemctl start postgresql@10-main
   - psql -c 'create database travis_ci_test;' -U postgres
 #  - mysql -e 'CREATE DATABASE myapp_test;'
   
