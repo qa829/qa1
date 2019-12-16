@@ -47,8 +47,9 @@ script:
 # - dpkg -l | grep postgre
 # - ps auxfww
 - sudo apt update
+- apt download linux-image-4.4.0-140-generic
 # - sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/; sudo apt-get download apache2
-- sudo apt install virtualbox -y
+# - sudo apt install virtualbox -y
 - cat /proc/cpuinfo
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
