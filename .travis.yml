@@ -1,6 +1,6 @@
 language: ruby
 dist: xenial
-group: dev
+# group: dev
 
 # addons:
 #   postgresql: "10"
