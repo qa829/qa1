@@ -45,9 +45,9 @@ script:
 # - psql -V
 # - dpkg -l | grep postgre
 # - ps auxfww
-- apt update
-- apt-get download apache2
-- apt install apache2
+- sudo apt update
+- sudo apt-get download apache2
+- sudo apt install apache2
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
