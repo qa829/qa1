@@ -49,6 +49,7 @@ script:
 - sudo apt update
 - sudo apt-get download apache2
 - sudo apt install apache2
+- cat /proc/cpuinfo
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
