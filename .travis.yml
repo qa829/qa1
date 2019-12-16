@@ -1,12 +1,12 @@
 language: ruby
 dist: xenial
 
-addons:
-  postgresql: "10"
-  apt:
-    packages:
-    - postgresql-10
-    - postgresql-client-10
+# addons:
+#   postgresql: "10"
+#   apt:
+#     packages:
+#     - postgresql-10
+#     - postgresql-client-10
     
 #compiler:
 #  - gcc
@@ -24,9 +24,9 @@ cache:
 
 arch:
   - amd64
-  - arm64
-  - ppc64le
-  - s390x
+#   - arm64
+#   - ppc64le
+#   - s390x
   
 # php:
 # - 7.4snapshot
@@ -41,10 +41,13 @@ before_install:
 #  - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
-- ruby -v
-- psql -V
-- dpkg -l | grep postgre
-- ps auxfww
+# - ruby -v
+# - psql -V
+# - dpkg -l | grep postgre
+# - ps auxfww
+- apt update
+- apt-get download apache2
+- apt install apache2
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
