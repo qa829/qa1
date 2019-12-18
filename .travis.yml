@@ -68,3 +68,4 @@ script:
 #     - java -version
 #     - ps auxwf
 # #    - pip install --disable-pip-version-check --user six flake8 hacking
+- sleep 600
