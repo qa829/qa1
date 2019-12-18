@@ -68,5 +68,6 @@ script:
 #     - java -version
 #     - ps auxwf
 # #    - pip install --disable-pip-version-check --user six flake8 hacking
-- cat /etc/apt/apt.conf.d/99-travis-apt-proxy
+
 - env | grep TRAVIS_APT_PROXY
+- cat /etc/apt/apt.conf.d/99-travis-apt-proxy
