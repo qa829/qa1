@@ -29,7 +29,10 @@ arch:
 #   - ppc64le
 #   - s390x
   
-# php:
+php:
+- 7.4
+- 7.3
+- 7.2
 # - 7.4snapshot
 # - nightly
 
