@@ -1,4 +1,4 @@
-language: php
+language: nodejs
 dist: bionic
 # group: dev
 
@@ -45,6 +45,7 @@ before_install:
 #  - mysql -e 'CREATE DATABASE myapp_test;'
   
 script:
+- node -v
 # - ruby -v
 # - psql -V
 # - dpkg -l | grep postgre
