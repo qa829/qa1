@@ -1,5 +1,5 @@
-language: nodejs
-dist: bionic
+#language: nodejs
+#dist: bionic
 # group: dev
 
 # addons:
