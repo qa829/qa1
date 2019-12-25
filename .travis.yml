@@ -1,5 +1,8 @@
-language: node_js
+language: ruby
 dist: bionic
+
+rvm:
+- 2.7.0
 # group: dev
 
 # addons:
@@ -25,7 +28,7 @@ cache:
 
 arch:
   - amd64
-#   - arm64
+  - arm64
 #   - ppc64le
 #   - s390x
   
