@@ -1,9 +1,10 @@
 language: ruby
 dist: bionic
+group: dev
 
 rvm:
 - 2.7.0
-- 2.6.5
+# - 2.6.5
 # group: dev
 
 # addons:
@@ -29,9 +30,9 @@ cache:
 
 arch:
   - amd64
-  - arm64
-  - ppc64le
-  - s390x
+#   - arm64
+#   - ppc64le
+#   - s390x
   
 # php:
 # - 7.4
