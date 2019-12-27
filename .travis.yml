@@ -1,5 +1,5 @@
 language: ruby
-dist: bionic
+dist: xenial
 # group: dev
 
 rvm:
@@ -30,9 +30,9 @@ cache:
 
 arch:
   - amd64
-#   - arm64
-#   - ppc64le
-#   - s390x
+  - arm64
+  - ppc64le
+  - s390x
   
 # php:
 # - 7.4
