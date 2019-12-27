@@ -1,5 +1,5 @@
-language: generic
-dist: xenial
+language: ruby
+dist: bionic
 # group: dev
 
 # rvm:
