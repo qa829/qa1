@@ -1,9 +1,9 @@
-language: ruby
+language: generic
 dist: xenial
 # group: dev
 
-rvm:
-- 2.7.0
+# rvm:
+# - 2.7.0
 # - 2.6.5
 # group: dev
 
