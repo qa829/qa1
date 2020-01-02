@@ -7,7 +7,8 @@ dist: xenial
 # - 2.6.5
 # group: dev
 
-# addons:
+addons:
+    artifacts: true
 #   postgresql: "10"
 #   apt:
 #     packages:
@@ -52,7 +53,7 @@ before_install:
 script:
 # - node -v
 - ruby -v
-- artifacts -V
+- artifacts -v
 # - psql -V
 # - dpkg -l | grep postgre
 # - ps auxfww
