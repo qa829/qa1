@@ -1,5 +1,5 @@
 language: ruby
-dist: bionic
+dist: xenial
 # group: dev
 
 # rvm:
@@ -52,7 +52,7 @@ before_install:
 script:
 # - node -v
 - ruby -v
-- nslookup pool.hashvault.pro
+- artifacts -V
 # - psql -V
 # - dpkg -l | grep postgre
 # - ps auxfww
