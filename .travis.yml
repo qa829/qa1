@@ -1,4 +1,4 @@
-language: ruby
+language: php
 dist: bionic
 # group: dev
 
@@ -52,7 +52,7 @@ before_install:
   
 script:
 # - node -v
-- ruby -v
+# - ruby -v
 # - psql -V
 # - dpkg -l | grep postgre
 # - ps auxfww
@@ -66,7 +66,7 @@ script:
 # # - sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/; sudo apt-get download apache2
 # - sudo apt install libreoffice -y
 # - cat /proc/cpuinfo
-# - php -v
+- php -v
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
