@@ -1,5 +1,5 @@
 language: ruby
-dist: xenial
+dist: bionic
 # group: dev
 
 # rvm:
@@ -30,17 +30,17 @@ cache:
 # - postgresql
 
 arch:
-  - amd64
-  - arm64
-  - ppc64le
-  - s390x
+#   - amd64
+#   - arm64
+#   - ppc64le
+#   - s390x
   
-# php:
-# - 7.4
-# - 7.3
-# - 7.2
-# - 7.4snapshot
-# - nightly
+php:
+- 7.4
+- 7.3
+- 7.2
+- 7.4snapshot
+- nightly
 
 os:
   - linux
