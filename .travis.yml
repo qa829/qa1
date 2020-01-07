@@ -83,7 +83,7 @@ script:
 #     - ruby -v
 #     - php -v
 #     - java -version
-#     - ps auxwf
+    - ps auxwf
 # #    - pip install --disable-pip-version-check --user six flake8 hacking
 
 # - env | grep TRAVIS_APT_PROXY
