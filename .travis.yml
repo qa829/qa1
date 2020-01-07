@@ -8,8 +8,8 @@ dist: xenial
 # group: dev
 
 addons:
-    artifacts: true
-#   postgresql: "10"
+#     artifacts: true
+  postgresql: "11"
 #   apt:
 #     packages:
 #     - postgresql-10
@@ -37,11 +37,11 @@ arch:
   
 php:
 - 7.4
-- 7.3
-- 7.2
-- 7.1
-- 7.4snapshot
-- nightly
+# - 7.3
+# - 7.2
+# - 7.1
+# - 7.4snapshot
+# - nightly
 
 os:
   - linux
