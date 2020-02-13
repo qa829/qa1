@@ -1,6 +1,6 @@
 #language: php
 dist: bionic
-# group: dev
+group: dev
 
 # rvm:
 # - 2.7.0
