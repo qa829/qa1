@@ -1,4 +1,4 @@
-language: php
+#language: php
 dist: bionic
 # group: dev
 
@@ -55,8 +55,8 @@ script:
 # - node -v
 # - ruby -v
 # - psql -V
-# - dpkg -l | grep postgre
-# - ps auxfww
+- dpkg -l | grep postgre
+- ps auxfww
 # - git lfs -v
 # - hg version
 # - svn --version
@@ -67,7 +67,7 @@ script:
 # # - sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/; sudo apt-get download apache2
 # - sudo apt install libreoffice -y
 # - cat /proc/cpuinfo
-- php -v
+#- php -v
 #     - ls /home/travis/.cache/
 #     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
 #     - travis_debug
@@ -83,7 +83,7 @@ script:
 #     - ruby -v
 #     - php -v
 #     - java -version
-    - ps auxwf
+# - ps auxwf
 # #    - pip install --disable-pip-version-check --user six flake8 hacking
 
 # - env | grep TRAVIS_APT_PROXY
