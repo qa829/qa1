@@ -10,9 +10,9 @@ group: dev
 addons:
 #     artifacts: true
   postgresql: "11"
-#   apt:
-#     packages:
-#     - postgresql-10
+  apt:
+    packages:
+    - postgresql-11
 #     - postgresql-client-10
     
 #compiler:
