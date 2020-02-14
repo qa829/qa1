@@ -1,93 +1,13 @@
-#language: php
 dist: bionic
-language: node_js
-node_js:
-  - "10"
-# group: dev
-
-# rvm:
-# - 2.7.0
-# - 2.6.5
-# group: dev
-
+sudo: false
+services:
+  - postgresql
 addons:
-#     artifacts: true
   postgresql: "10"
-#   apt:
-#     packages:
-#     - postgresql-11
-#     - postgresql-client-10
-    
-#compiler:
-#  - gcc
-
-cache:
-  directories:
-    - /home/travis/.cache/
-     
-# services:
-# - redis
-# - mysql
-# - rabbitmq
-# - mongodb
-# - postgresql
-
-arch:
-#   - amd64
-#   - arm64
-#   - ppc64le
-#   - s390x
-  
-# php:
-# - 7.4
-# - 7.3
-# - 7.2
-# - 7.1
-# - 7.4snapshot
-# - nightly
-
-os:
-  - linux
-
+  apt:
+    packages:
+      - postgresql-10
+      - postgresql-client-10
+      - postgresql-contrib-10
 before_install:
-#  - sudo systemctl start postgresql@10-main
-#   - psql -c 'create database travis_ci_test;' -U postgres
-#  - mysql -e 'CREATE DATABASE myapp_test;'
-  
-script:
-# - node -v
-# - ruby -v
-# - psql -V
-- dpkg -l | grep postgre
-- ps auxfww
-# - git lfs -v
-# - hg version
-# - svn --version
-# - ruby -v
-# - python -V
-# - sudo apt update
-# - apt download linux-image-4.4.0-140-generic
-# # - sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/; sudo apt-get download apache2
-# - sudo apt install libreoffice -y
-# - cat /proc/cpuinfo
-#- php -v
-#     - ls /home/travis/.cache/
-#     #- dd if=/dev/zero of=/home/travis/.cache/testfile2-$(uname -m) bs=1G count=1 oflag=direct
-#     - travis_debug
-#     - uname -a
-#     - echo TRAVIS_ARCH = $TRAVIS_ARCH
-#     - cat /etc/resolv.conf
-#     - python --version
-#     - pip -V
-#     #- cat /etc/os-release
-#     #- uname -a
-#     #- sudo apt update && sudo apt upgrade -y
-#     #- cat /etc/os-release
-#     - ruby -v
-#     - php -v
-#     - java -version
-# - ps auxwf
-# #    - pip install --disable-pip-version-check --user six flake8 hacking
-
-# - env | grep TRAVIS_APT_PROXY
-# - cat /etc/apt/apt.conf.d/99-travis-apt-proxy
+  - psql -d template1 -U postgres -c "CREATE USER pinafore WITH PASSWORD 'pinafore' CREATEDB;"
