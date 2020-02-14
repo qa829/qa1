@@ -1,6 +1,9 @@
 #language: php
-dist: xenial
-group: dev
+dist: bionic
+language: node_js
+node_js:
+  - "10"
+# group: dev
 
 # rvm:
 # - 2.7.0
