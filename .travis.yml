@@ -9,10 +9,10 @@ group: dev
 
 addons:
 #     artifacts: true
-  postgresql: "11"
-  apt:
-    packages:
-    - postgresql-11
+  postgresql: "10"
+#   apt:
+#     packages:
+#     - postgresql-11
 #     - postgresql-client-10
     
 #compiler:
@@ -35,8 +35,8 @@ arch:
 #   - ppc64le
 #   - s390x
   
-php:
-- 7.4
+# php:
+# - 7.4
 # - 7.3
 # - 7.2
 # - 7.1
