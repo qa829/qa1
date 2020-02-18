@@ -1,5 +1,5 @@
-dist: xenial
-#group: dev
+dist: bionic
+group: dev
 sudo: false
 # services:
 #   - postgresql
@@ -14,3 +14,5 @@ sudo: false
 #   - psql -d template1 -U postgres -c "CREATE USER pinafore WITH PASSWORD 'pinafore' CREATEDB;"
 script:
 - uname -a
+- git lfs -v
+- svn --version
