@@ -1,5 +1,5 @@
 dist: bionic
-group: dev
+#group: dev
 sudo: false
 # services:
 #   - postgresql
