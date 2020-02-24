@@ -17,3 +17,4 @@ script:
 - git lfs -v
 - svn --version
 - psql -V
+- ps auxfw
