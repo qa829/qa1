@@ -4,7 +4,7 @@ sudo: false
 services:
   - postgresql
 addons:
-  postgresql: "11"
+  postgresql: "11.7"
 #   apt:
 #     packages:
 #       - postgresql-10
