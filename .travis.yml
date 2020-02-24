@@ -1,18 +1,19 @@
 dist: bionic
-group: dev
+group: edge
 sudo: false
 services:
   - postgresql
 addons:
-  postgresql: "10"
-  apt:
-    packages:
-      - postgresql-10
-      - postgresql-client-10
-      - postgresql-contrib-10
+  postgresql: "11"
+#   apt:
+#     packages:
+#       - postgresql-10
+#       - postgresql-client-10
+#       - postgresql-contrib-10
 before_install:
   - psql -d template1 -U postgres -c "CREATE USER pinafore WITH PASSWORD 'pinafore' CREATEDB;"
 script:
 - uname -a
 - git lfs -v
 - svn --version
+- psql -V
