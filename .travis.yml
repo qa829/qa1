@@ -13,7 +13,7 @@
 # before_install:
 #   - psql -d template1 -U postgres -c "CREATE USER pinafore WITH PASSWORD 'pinafore' CREATEDB;"
 language: generic
-dist: bionic
+dist: xenial
 group: edge
 script:
 - uname -a
