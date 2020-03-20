@@ -1,23 +1,36 @@
-# dist: bionic
-# # group: edge
-# sudo: false
-# services:
-#   - postgresql
+# arch: s390x
+dist: xenial
 # addons:
 #   postgresql: "11"
-# #   apt:
-# #     packages:
-# #       - postgresql-10
-# #       - postgresql-client-10
-# #       - postgresql-contrib-10
-# before_install:
-#   - psql -d template1 -U postgres -c "CREATE USER pinafore WITH PASSWORD 'pinafore' CREATEDB;"
-language: generic
-dist: xenial
-group: edge
+# language: elixir
+# group: dev
+# language: erlang
+# arch: ppc64le
+arch: amd64
+
+rvm:
+# - 2.6.5
+- 2.6.4
+- 2.6.3
+- 2.6.2
+- 2.6.1
+- 2.5.3
+- 2.7.0
+
+# cache: bundler
+
+install: skip
+
 script:
 - uname -a
-- git lfs -v
-- svn --version
-- psql -V
 - ps auxfw
+- ruby -v
+- df -h
+# - php -v
+- __dots() { while true ; do echo -en . ; sleep 30 ; done } ; __dots &
+- sleep 60000
+# - uname -a
+# - ruby -v
+# - gem env
+# - gem list
+# - sudo gem list
